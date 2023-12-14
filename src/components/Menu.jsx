@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import MenuItem from "./MenuItem";
 
-const Menu = ({ items }) => {
+const Menu = ({ items, menuByCategory }) => {
   return (
     <section>
       <div className="btn-container">
-        <Button text="All" />
-        <Button text="Breakfast" />
-        <Button text="Lunch" />
-        <Button text="Shakes" />
+        <Button text="all" menuByCategory={menuByCategory} />
+        <Button text="breakfast" menuByCategory={menuByCategory} />
+        <Button text="lunch" menuByCategory={menuByCategory} />
+        <Button text="shakes" menuByCategory={menuByCategory} />
       </div>
       <div className="section-center">
         {items.map((item) => (
@@ -21,7 +21,8 @@ const Menu = ({ items }) => {
 };
 
 Menu.propType = {
-  items: PropTypes,
+  items: PropTypes.array,
+  menuByCategory: PropTypes.func,
 };
 
 export default Menu;

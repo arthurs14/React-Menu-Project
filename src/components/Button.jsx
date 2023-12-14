@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const Button = ({ text }) => {
+const Button = ({ text, menuByCategory }) => {
   return (
-    <button type="button" className="btn">
+    <button type="button" className="btn" onClick={() => menuByCategory(text)}>
       {text}
     </button>
   );
@@ -10,6 +10,7 @@ const Button = ({ text }) => {
 
 Button.propType = {
   text: PropTypes.string,
+  menuByCategory: PropTypes.func,
 };
 
 export default Button;
