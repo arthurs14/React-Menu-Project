@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const MenuItem = ({ item, menuByCategory }) => {
+const MenuItem = ({ item }) => {
   const { img, title, price, desc } = item;
   return (
     <article className="menu-item">
@@ -18,7 +18,6 @@ const MenuItem = ({ item, menuByCategory }) => {
 
 MenuItem.propType = {
   item: PropTypes.object,
-  menuByCategory: PropTypes.func,
 };
 
 export default MenuItem;
